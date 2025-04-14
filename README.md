@@ -68,7 +68,8 @@ id, sku, cost, category, name, brand, retail_price, department
 - Automatic retry mechanism for transient failures
 
 ## Deployment Instructions
-1. **Build and Push Docker Images**:```bash
+1. **Build and Push Docker Images**:
+```bash
 # From project rootcd Docker_images/validation_image
 docker build -t spark-validate .cd ../transformation_image
 docker build -t spark-transform .
