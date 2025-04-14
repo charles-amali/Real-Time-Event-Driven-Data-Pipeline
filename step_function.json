@@ -171,7 +171,7 @@
         "Resource": "arn:aws:states:::sns:publish",
         "Parameters": {
           "TopicArn": "arn:aws:sns:us-east-1:724772083049:ecs_pipeline",
-          "Message": "E-commerce Category-Level KPIs and Order-Level KPIs computed and saved to DynanoDB successfully"
+          "Message": "E-commerce Category-Level KPIs and Order-Level KPIs computed and saved to DynamoDB successfully"
         },
         "Next": "Success"
       },
