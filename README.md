@@ -70,10 +70,13 @@ id, sku, cost, category, name, brand, retail_price, department
 ## Deployment Instructions
 1. **Build and Push Docker Images**:
 ```bash
-# From project rootcd Docker_images/validation_image
-docker build -t spark-validate .cd ../transformation_image
+# From project root
+cd Docker_images/validation_image
+docker build -t spark-validate .
+cd ../transformation_image
 docker build -t spark-transform .
-# Push to ECR./push_to_cloud.sh
+# Push to ECR
+./push_to_cloud.sh
 ```
 2. **Deploy Infrastructure**:
 ```bash
@@ -89,7 +92,8 @@ BUCKET_NAME=your_bucket
 ```
 ## Manual Testing
 1. **Upload Test Data**:
-```bashaws s3 cp test_data/orders.csv s3://your-bucket/landing-data/orders/
+```bash
+aws s3 cp test_data/orders.csv s3://your-bucket/landing-data/orders/
 aws s3 cp test_data/order_items.csv s3://your-bucket/landing-data/order_items/
 aws s3 cp test_data/products.csv s3://your-bucket/landing-data/products.csv
 ```
@@ -102,9 +106,9 @@ aws logs get-log-events --log-group-name /ecs/validate-task
 3. **Verify Results**:
 ```bash
 # Query DynamoDB tables
-aws dynamodb query \    
+    aws dynamodb query \    
     --table-name category_kpi_table \
-    --key-condition-expression "category = :cat AND order_date = :date" \    
+    --key-condition-expression "category = :cat AND order_date = :date" \  
     --expression-attribute-values '{":cat":{"S":"Electronics"},":date":{"S":"2023-01-01"}}'
 ```
 
