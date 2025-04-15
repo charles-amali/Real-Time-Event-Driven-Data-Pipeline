@@ -2,7 +2,7 @@
 A production-grade, event-driven data pipeline that processes e-commerce transaction data in real-time using AWS services. The pipeline validates incoming data, transforms it into business KPIs, and stores results for real-time querying.
 
 ## Architecture Overview
-![Architecture Diagram](architecture_ecs.jpg)
+![Architecture Diagram](images/architecture_ecs.jpg)
 The pipeline consists of the following components:
 - **S3**: Stores incoming transaction data files
 - **ECS**: Runs containerized validation and transformation tasks
